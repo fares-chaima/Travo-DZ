@@ -1,0 +1,601 @@
+:root {
+    /* Couleurs */
+    --primary: #4361ee;
+    --primary-light: #4895ef;
+    --primary-dark: #3a0ca3;
+    --secondary: #4cc9f0;
+    --accent: #f72585;
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --error: #f87171;
+    --dark: #1e293b;
+    --dark-light: #334155;
+    --light: #f8fafc;
+    --gray: #94a3b8;
+    --gray-light: #e2e8f0;
+    --border-color: #cbd5e1;
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    
+    /* Transitions */
+    --transition: 0.3s ease-in-out;
+    
+    /* Typographie */
+    --text-sm: clamp(0.65rem, 2vw, 0.875rem);
+    --text-base: clamp(0.75rem, 2.5vw, 1rem);
+    --text-lg: clamp(0.875rem, 3vw, 1.25rem);
+    --text-xl: clamp(1rem, 3.5vw, 1.5rem);
+  }
+  
+  /* Reset et base */
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .transact-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light);
+    min-height: 100vh;
+    color: var(--dark);
+  }
+  
+  .transact-topbar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .topbar-title {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .nav-return {
+    background: none;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    color: white;
+    transition: var(--transition);
+  }
+  
+  .nav-return:hover {
+    color: var(--gray-light);
+    transform: scale(1.1);
+  }
+  
+  .transact-topbar h2 {
+    font-size: var(--text-xl);
+    color: white;
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  .worker-details {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--primary);
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .baridi-logo-large {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .worker-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .worker-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    color: var(--primary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .worker-info h3 {
+    font-size: var(--text-lg);
+    color: var(--dark);
+    margin: 0;
+  }
+  
+  .worker-info p {
+    font-size: var(--text-sm);
+    color: var(--dark-light);
+    margin: 2px 0 0;
+  }
+  
+  .artisan-dropdown {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: var(--text-base);
+    background-color: var(--light);
+    color: var(--dark);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%2394a3b8" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 14px;
+    min-width: 120px;
+  }
+  
+  .artisan-dropdown:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.15);
+  }
+  
+  .artisan-dropdown:hover {
+    background-color: var(--gray-light);
+    border-color: var(--primary-light);
+  }
+  
+  .transact-form {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    border-top: 2px solid var(--primary);
+  }
+  
+  .field-box {
+    margin-bottom: 15px;
+  }
+  
+  .field-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: var(--dark-light);
+    font-size: var(--text-sm);
+  }
+  
+  .field-box input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: var(--text-base);
+    transition: var(--transition);
+    background-color: var(--light);
+    color: var(--dark);
+  }
+  
+  .field-box input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.15);
+  }
+  
+  .field-icon-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .field-icon-wrap svg {
+    position: absolute;
+    left: 10px;
+    color: var(--gray);
+  }
+  
+  .field-icon-wrap input {
+    padding-left: 35px;
+  }
+  
+  .confirm-action {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .confirm-action:disabled {
+    background-color: var(--gray);
+    cursor: not-allowed;
+  }
+  
+  .confirm-action:hover:not(:disabled) {
+    background-color: var(--primary-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .prev-step {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition);
+  }
+  
+  .prev-step:hover {
+    background-color: var(--gray-light);
+    border-color: var(--primary-light);
+    color: var(--primary-light);
+  }
+  
+  .transact-guide {
+    background-color: rgba(76, 201, 240, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: var(--secondary);
+    font-size: var(--text-sm);
+    border-left: 2px solid var(--secondary);
+  }
+  
+  .transact-overview {
+    background-color: var(--gray-light);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+  }
+  
+  .transact-overview h4 {
+    margin-top: 0;
+    color: var(--dark);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    font-size: var(--text-base);
+  }
+  
+  .overview-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: var(--text-sm);
+    color: var(--dark-light);
+  }
+  
+  .overview-line.total {
+    font-weight: bold;
+    color: var(--dark);
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .success-message, .error-message {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .success-message {
+    border-top: 3px solid var(--success);
+  }
+  
+  .success-message h3 {
+    color: var(--success);
+  }
+  
+  .error-message {
+    border-top: 3px solid var(--error);
+  }
+  
+  .error-message h3 {
+    color: var(--error);
+  }
+  
+  .success-message p, .error-message p {
+    color: var(--dark-light);
+    font-size: var(--text-sm);
+    margin: 8px 0;
+  }
+  
+  .transact-recap {
+    text-align: left;
+    margin: 15px 0;
+    padding: 12px;
+    background-color: var(--gray-light);
+    border-radius: 8px;
+    font-size: var(--text-sm);
+    color: var(--dark-light);
+  }
+  
+  .secure-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    color: var(--gray);
+    font-size: var(--text-sm);
+    gap: 5px;
+  }
+  
+  .secure-note svg {
+    color: var(--success);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .transact-wrapper {
+      max-width: 100%;
+      padding: 10px;
+    }
+    
+    .transact-topbar {
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .transact-topbar h2 {
+      font-size: var(--text-lg);
+    }
+    
+    .baridi-logo-large {
+      width: 60px;
+      height: 60px;
+      margin-right: 8px;
+    }
+    
+    .worker-details {
+      padding: 12px;
+      gap: 8px;
+    }
+    
+    .artisan-dropdown {
+      padding: 6px 10px;
+      font-size: var(--text-sm);
+      min-width: 100px;
+    }
+    
+    .field-box input {
+      padding: 8px 10px;
+      font-size: var(--text-sm);
+    }
+    
+    .confirm-action, .prev-step {
+      padding: 10px;
+      font-size: var(--text-sm);
+    }
+  }
+  
+  @media (max-width: 350px) {
+    .worker-details {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      padding: 10px;
+    }
+    
+    .baridi-logo-large {
+      width: 50px;
+      height: 50px;
+      margin: 0 0 10px 0;
+    }
+    
+    .worker-info {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+    
+    .worker-icon {
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+    
+    .artisan-dropdown {
+      width: 100%;
+      margin-top: 8px;
+      padding: 8px;
+      font-size: var(--text-sm);
+    }
+    
+    .transact-topbar h2 {
+      font-size: var(--text-base);
+    }
+    
+    .field-box {
+      margin-bottom: 12px;
+    }
+    
+    .field-box label {
+      margin-bottom: 4px;
+    }
+  }
+  
+  @media (max-width: 300px) {
+    .transact-wrapper {
+      padding: 8px;
+    }
+    
+    .transact-topbar {
+      padding: 8px;
+      margin-bottom: 12px;
+    }
+    
+    .transact-topbar h2 {
+      font-size: var(--text-base);
+    }
+    
+    .baridi-logo-large {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 8px;
+    }
+    
+    .worker-icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 6px;
+    }
+    
+    .worker-info h3 {
+      font-size: var(--text-base);
+    }
+    
+    .worker-info p {
+      font-size: var(--text-sm);
+    }
+    
+    .artisan-dropdown {
+      padding: 6px;
+      font-size: clamp(0.6rem, 2vw, 0.75rem);
+    }
+    
+    .field-box input {
+      padding: 6px 8px;
+      font-size: clamp(0.6rem, 2vw, 0.75rem);
+    }
+    
+    .confirm-action, .prev-step {
+      padding: 8px;
+      font-size: clamp(0.65rem, 2vw, 0.875rem);
+    }
+    
+    .transact-guide {
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    
+    .transact-overview {
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    
+    .overview-line {
+      margin: 6px 0;
+    }
+    
+    .secure-note {
+      margin-top: 15px;
+      font-size: clamp(0.6rem, 2vw, 0.75rem);
+    }
+  }
+  
+  @media (max-width: 200px) {
+    .transact-wrapper {
+      padding: 5px;
+    }
+    
+    .transact-topbar {
+      padding: 6px;
+      margin-bottom: 10px;
+    }
+    
+    .transact-topbar h2 {
+      font-size: clamp(0.7rem, 2vw, 0.875rem);
+    }
+    
+    .baridi-logo-large {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 6px;
+    }
+    
+    .worker-icon {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 5px;
+    }
+    
+    .worker-info h3 {
+      font-size: clamp(0.7rem, 2vw, 0.875rem);
+    }
+    
+    .worker-info p {
+      font-size: clamp(0.6rem, 1.8vw, 0.65rem);
+    }
+    
+    .artisan-dropdown {
+      padding: 4px;
+      font-size: clamp(0.55rem, 1.8vw, 0.7rem);
+    }
+    
+    .field-box input {
+      padding: 5px 6px;
+      font-size: clamp(0.55rem, 1.8vw, 0.7rem);
+    }
+    
+    .confirm-action, .prev-step {
+      padding: 6px;
+      font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+    }
+    
+    .transact-guide {
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    
+    .transact-overview {
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    
+    .overview-line {
+      margin: 4px 0;
+    }
+    
+    .secure-note {
+      margin-top: 10px;
+      font-size: clamp(0.55rem, 1.8vw, 0.65rem);
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .transact-form, .success-message, .error-message {
+    animation: fadeIn 0.5s ease-out;
+  }

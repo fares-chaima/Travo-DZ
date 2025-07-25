@@ -1,0 +1,248 @@
+/* Variables */
+:root {
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --secondary: #2ecc71;
+    --secondary-dark: #27ae60;
+    --accent: #e74c3c;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+    --gray: #7f8c8d;
+    --gray-light: #ddd;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+    --border-color: #ddd;
+    --radius: 8px;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  /* Styles de base */
+  .llogin-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light);
+    padding: 2rem;
+    background-image: url('/auth-bg.svg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .llogin-container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .llogin-header {
+    background: #3498db;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .llogo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .llogin-logo {
+    width: 70px;
+  height: 70px;
+  margin-right: 1rem;
+ margin-top: 10px;
+ background-color: white;
+ border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 5px;
+margin-left: 10px;
+  }
+  
+  .llogo-wrapper h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .llogo-wrapper h1 span {
+    color: white;
+  }
+  
+  .llogin-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .llogin-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+  }
+  
+  .llogin-form {
+    padding: 2rem;
+  }
+  
+  /* Styles de formulaire */
+  .form-groupp {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-groupp label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--dark);
+  }
+  
+  .input-groupp {
+    position: relative;
+  }
+  
+  .input-iconn {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    font-size: 1rem;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    transition: var(--transition);
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  }
+  
+  /* Options du formulaire */
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0 1.5rem;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--dark);
+    cursor: pointer;
+  }
+  
+  .remember-me input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .checkmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    border: 1px solid var(--gray-light);
+    border-radius: 4px;
+    color: white;
+    font-size: 0.5rem;
+    transition: var(--transition);
+  }
+  
+  .remember-me input:checked + .checkmark {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+  
+  .forgot-password {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  /* Bouton de connexion */
+  .llogin-button {
+    width: 100%;
+    padding: 1rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 1.5rem;
+  }
+  
+  .llogin-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Pied de page */
+  .llogin-footer {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--dark);
+  }
+  
+  .llogin-footer a {
+    color: var(--primary);
+    font-weight: 500;
+    margin-left: 0.5rem;
+    text-decoration: none;
+  }
+  
+  .llogin-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .llogin-page {
+      padding: 1rem;
+    }
+    
+    .llogin-container {
+      border-radius: 0;
+    }
+    
+    .llogin-header {
+      padding: 1.5rem;
+    }
+    
+    .llogin-form {
+      padding: 1.5rem;
+    }
+    
+    .form-options {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
